@@ -1,0 +1,415 @@
+/* Reset & Body */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+}
+
+/* Header */
+header {
+    background-color: #4f46e5;
+    color: #fff;
+    padding: 0;
+}
+
+.header-content-wrapper {
+    width: 100%;   
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    height: 70px;
+    padding: 0px 40px;
+}
+
+.header-left h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.header-center {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.header-center p {
+    margin: 0;
+    font-size: 16px;
+}
+
+.header-right a {
+    color: #ffedd5;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.header-right a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+main {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Forms */
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form input[type="datetime-local"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+form input[type="submit"] {
+    background-color: #4f46e5;
+    color: #fff;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form input[type="submit"]:hover {
+    background-color: #4338ca;
+}
+
+/* Flash messages */
+.flash {
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    background-color: #fee2e2;
+    border-left: 5px solid #ef4444;
+    border-radius: 5px;
+    color: #b91c1c;
+}
+
+/* Dashboard Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0px;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table th {
+    background-color: #4f46e5;
+    color: #fff;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #f0f0ff;
+}
+
+/* Buttons in table */
+table a {
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #fff;
+}
+
+table a:hover {
+    opacity: 0.8;
+}
+
+a[href*="edit"] {
+    background-color: #10b981; 
+}
+
+a[href*="delete"] {
+    background-color: #ef4444; 
+}
+
+/* Links */
+a {
+    color: #4f46e5;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Titles */
+h2 {
+    margin-bottom: 20px;
+    color: #4f46e5;
+}
+
+.button-add {
+    display: inline-block;
+    background-color: #4f46e5;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-bottom: 35px;
+}
+
+.button-add:hover {
+    background-color: #4338ca;
+    text-decoration: none;
+}
+
+.btn-edit, .btn-delete {
+    border: none;
+    padding: 7px 15px;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-edit {
+    background-color: #10b981;
+}
+
+.btn-edit:hover {
+    background-color: #0d9468;
+}
+
+.btn-delete {
+    background-color: #ef4444;
+}
+
+.btn-delete:hover {
+    background-color: #c72f2f;
+}
+
+
+.modal-backdrop {
+    display: none; 
+    position: fixed;
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    
+    background-color: rgba(0, 0, 0, 0.6); 
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto; 
+    padding: 30px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
+    text-align: center;
+}
+
+.modal-content h3 {
+    color: #ef4444;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    margin-bottom: 20px;
+}
+
+.modal-actions {
+    margin-top: 15px;
+}
+
+.modal-actions button,
+.modal-actions a {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 0 5px;
+    display: inline-block;
+    transition: background-color 0.2s;
+}
+
+#modal-cancel {
+    background-color: #ccc;
+    color: #333;
+}
+
+#modal-ok {
+    background-color: #ef4444; 
+    color: white;
+}
+
+#modal-cancel:hover {
+    background-color: #bbb;
+}
+
+#modal-ok:hover {
+    background-color: #cc0000;
+}
+
+
+/* --- Global Overrides for Auth Pages --- */
+.auth-container {
+    background-color: #e6e9f9; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    padding: 20px;
+    position: relative;
+    overflow: auto;
+}
+
+/* --- The Main Login Box --- */
+.auth-box {
+    background-color: #f0f3ff;
+    padding: 35px 40px; 
+    border-radius: 20px; 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1); 
+    width: 100%;
+    max-width: 380px; 
+    text-align: center;
+    border: 1px solid #d0d5fa;
+    z-index: 10;
+    position: relative;
+}
+
+/* --- Header and Title --- */
+.auth-header {
+    margin-bottom: 20px;
+}
+
+.auth-header h2 {
+    font-size: 1.8em;
+    color: #333; 
+    font-weight: 700;
+}
+
+/* --- Input Field Styling (Referencing the Icon Inputs) --- */
+
+.form-group.icon-input {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.form-group .icon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #a0a0a0; 
+    font-size: 1.1em;
+    z-index: 2;
+}
+
+.auth-box input[type="text"],
+.auth-box input[type="password"],
+.auth-box input[type="email"] {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: 1px solid #e0e0e0; 
+    border-radius: 10px; 
+    font-size: 1em;
+    color: #333;
+    background-color: #fcfcfc; 
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.auth-box input:focus {
+    border-color: #4c6ef5;
+    outline: none;
+    box-shadow: 0 0 0 1px rgba(76, 110, 245, 0.5); 
+}
+
+/* --- Submit Button (Gradient Background) --- */
+.btn-submit {
+    background: linear-gradient(90deg, #4c6ef5, #7a9cff); 
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 15px;
+    box-shadow: 0 4px 15px rgba(76, 110, 245, 0.5); 
+    transition: transform 0.2s ease;
+}
+
+.btn-submit:hover {
+    transform: translateY(-1px);
+    opacity: 0.95;
+}
+
+/* --- Registration Link Styling --- */
+.auth-link {
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-size: 0.9em;
+    color: #777;
+}
+
+.auth-link .register-link {
+    color: #4c6ef5;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.auth-link .register-link:hover {
+    text-decoration: underline;
+}
+.task-summary {
+    font-size: 1.1em;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 25px; 
+}
+
+/* --- Logo & Title Styling --- */
+.logo-container {
+    display: flex;
+    align-items: center; 
+    text-decoration: none; 
+}
+
+.nav-logo {
+    height: 100px; 
+    width: auto;
+    margin-right: 15px;
+}
+
+.logo-container h1 {
+    color: #fff;
+    margin: 0; 
+}
