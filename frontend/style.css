@@ -1,4 +1,4 @@
-/* Reset & Body */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -14,7 +14,6 @@ body {
     margin: 0;
 }
 
-/* Header */
 header {
     background-color: #4f46e5;
     color: #fff;
@@ -55,7 +54,6 @@ header {
     text-decoration: underline;
 }
 
-/* Main Content */
 main {
     max-width: 1100px;
     margin: 30px auto;
@@ -65,7 +63,6 @@ main {
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* Forms */
 form input[type="text"],
 form input[type="password"],
 form input[type="email"],
@@ -93,7 +90,6 @@ form input[type="submit"]:hover {
     background-color: #4338ca;
 }
 
-/* Flash messages */
 .flash {
     margin-bottom: 15px;
     padding: 10px 15px;
@@ -103,7 +99,6 @@ form input[type="submit"]:hover {
     color: #b91c1c;
 }
 
-/* Dashboard Table */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -129,7 +124,6 @@ table tr:hover {
     background-color: #f0f0ff;
 }
 
-/* Buttons in table */
 table a {
     padding: 5px 10px;
     border-radius: 5px;
@@ -150,7 +144,6 @@ a[href*="delete"] {
     background-color: #ef4444; 
 }
 
-/* Links */
 a {
     color: #4f46e5;
 }
@@ -159,7 +152,6 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Titles */
 h2 {
     margin-bottom: 20px;
     color: #4f46e5;
@@ -276,8 +268,6 @@ h2 {
     background-color: #cc0000;
 }
 
-
-/* --- Global Overrides for Auth Pages --- */
 .auth-container {
     background-color: #e6e9f9; 
     display: flex;
@@ -289,7 +279,6 @@ h2 {
     overflow: auto;
 }
 
-/* --- The Main Login Box --- */
 .auth-box {
     background-color: #f0f3ff;
     padding: 35px 40px; 
@@ -303,7 +292,6 @@ h2 {
     position: relative;
 }
 
-/* --- Header and Title --- */
 .auth-header {
     margin-bottom: 20px;
 }
@@ -313,8 +301,6 @@ h2 {
     color: #333; 
     font-weight: 700;
 }
-
-/* --- Input Field Styling (Referencing the Icon Inputs) --- */
 
 .form-group.icon-input {
     position: relative;
@@ -350,7 +336,6 @@ h2 {
     box-shadow: 0 0 0 1px rgba(76, 110, 245, 0.5); 
 }
 
-/* --- Submit Button (Gradient Background) --- */
 .btn-submit {
     background: linear-gradient(90deg, #4c6ef5, #7a9cff); 
     color: white;
@@ -371,7 +356,6 @@ h2 {
     opacity: 0.95;
 }
 
-/* --- Registration Link Styling --- */
 .auth-link {
     margin-top: 20px;
     margin-bottom: 0;
@@ -396,7 +380,6 @@ h2 {
     margin-bottom: 25px; 
 }
 
-/* --- Logo & Title Styling --- */
 .logo-container {
     display: flex;
     align-items: center; 
@@ -413,3 +396,4 @@ h2 {
     color: #fff;
     margin: 0; 
 }
+
