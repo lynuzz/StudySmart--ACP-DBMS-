@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Add Task</h2>
+<form method="POST">
+    Title:<br><input type="text" name="title" required><br>
+    Subject:<br><input type="text" name="subject" required><br>
+    Deadline:<br><input type="datetime-local" name="deadline" required><br><br>
+    <input type="submit" value="Add Task">
+</form>
+{% endblock %}

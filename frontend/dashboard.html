@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Dashboard</h2>
+<p class="task-summary">Total Tasks: {{ total }} | Completed: {{ completed }}</p>
+<a href="{{ url_for('add_task') }}" class="button-add">Add New Task</a>
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Title</th>
+        <th>Subject</th>
+        <th>Deadline</th>
+        <th>Status</th>
+        <th>Actions</th>
+    </tr>
+    {% for task in tasks %}
+    <tr>
+        <td>{{ task.title }}</td>
+        <td>{{ task.subject }}</td>
+        <td><strong>DATE:</strong> {{ task.deadline.strftime('%Y-%m-%d') }}<br>
+        <strong>TIME:</strong> {{ task.deadline.strftime('%I:%M %p') }}</td>
+        <td>{{ task.status }}</td>
+        <td>
+            <button class="btn-edit" onclick="window.location='{{ url_for('edit_task', id=task.id) }}'">Edit</button>
+            <button class="btn-delete custom-delete-btn" data-delete-url="{{ url_for('delete_task', id=task.id) }}">Delete</button>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
