@@ -32,7 +32,7 @@ def register():
         if User.query.filter_by(username=username).first():
             flash("Username already exists")
             return redirect(url_for('register'))
-        new_user = User(username=username, password=password, email=email) 
+        new_user = User(username=username, password=password, email=email, role='user') 
         db.session.add(new_user)
         db.session.commit()
         flash("Account created! Please login.")
@@ -41,17 +41,44 @@ def register():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    user = None
+
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        user = User.query.filter_by(username=username, password=password).first()
+
+        user = User.query.filter_by(
+            username=username,
+            password=password
+        ).first()
+
         if user:
             session['user_id'] = user.id
             session['username'] = user.username
-            return redirect(url_for('dashboard'))
+            session['role'] = user.role
+
+            if user.role == 'admin':
+                return redirect(url_for('admin_dashboard'))
+            else:
+                return redirect(url_for('dashboard'))
         else:
             flash("Invalid credentials")
+
     return render_template('login.html')
+
+@app.route('/admin')
+def admin_dashboard():
+    if 'role' not in session or session['role'] != 'admin':
+        return redirect(url_for('login'))
+
+    users = User.query.all()
+    tasks = Task.query.all()
+
+    return render_template(
+        'admin_dashboard.html',
+        users=users,
+        tasks=tasks
+    )
 
 @app.route('/logout')
 def logout():
@@ -110,5 +137,18 @@ def delete_task(id):
 # Initialize database and run server
 if __name__ == '__main__':
     with app.app_context():
-        db.create_all()  
+        db.create_all()
+
+        admin = User.query.filter_by(username='admin').first()
+        if not admin:
+            admin = User(
+                username='admin',
+                password='admin123',
+                email='admin@studysmart.com',
+                role='admin'
+            )
+            db.session.add(admin)
+            db.session.commit()
+            print("Admin account created!")
+
     app.run(debug=True)
