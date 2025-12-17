@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Admin Dashboard</h2>
+
+<h3>All Users</h3>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Role</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.role }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<br>
+
+<h3>All Tasks</h3>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Subject</th>
+        <th>Status</th>
+        <th>User ID</th>
+    </tr>
+    {% for task in tasks %}
+    <tr>
+        <td>{{ task.title }}</td>
+        <td>{{ task.subject }}</td>
+        <td>{{ task.status }}</td>
+        <td>{{ task.user_id }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}
